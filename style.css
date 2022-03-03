@@ -140,7 +140,7 @@ background: url('https://images.pexels.com/photos/1036657/pexels-photo-1036657.j
     background-color: transparent;
     box-shadow: 0px 0px 1px 1px white;
 	-webkit-transform:translateY(0);
-	transform:translateY(0)
+	transform:translateY(0);
 	-webkit-transform:translateY(6px);
 	transform:translateY(6px);
 }
