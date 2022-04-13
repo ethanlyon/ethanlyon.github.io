@@ -6,8 +6,7 @@ feature_text: |
 feature_image: "https://picsum.photos/1300/400?image=989"
 excerpt: "Electrical Engineer and Data Scientist. Eclectic tastes, various interest, my better thoughts displayed to all. Welcome to ethanlyon.org"
 ---
-
-Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate is designed to get rolling immediately. Install it, configure it, tweak it, push it.
+Hello, welcome to Ethan Lyon's site. Here you can find my CV, and various blog posts detailing personal projects ranging from Data Science to Electrical Engineering. Powered by [Jekyll](https://jekyllrb.com/).
 
 {% include button.html text="GitHub" icon="github" link="https://github.com/ethanlyon" color="#0366d6" %}
 
