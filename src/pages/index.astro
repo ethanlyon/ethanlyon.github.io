@@ -6,16 +6,26 @@ import Layout from '../layouts/Layout.astro';
   <div style="padding-top:2rem;">
     <p class="label" style="margin-bottom:1rem;">001 / introduction</p>
 
-    <div class="bracket-box" style="margin-bottom:3rem;">
-      <h1 style="font-size:2rem;font-weight:700;line-height:1.2;margin:0 0 1rem;color:var(--text);">
-        Ethan [Nelson] Lyon
-      </h1>
-      <p style="color:var(--muted);max-width:520px;margin:0 0 0.5rem;">
-        Senior Data Scientist. Building end-to-end machine learning systems for fraud detection and risk mitigation. Based in Houston, TX.
-      </p>
-      <p style="color:var(--muted);max-width:520px;margin:0;font-size:12px;">
-        M.E.E. Rice University · EMBC
-      </p>
+    <div class="bracket-box" style="margin-bottom:3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+      <div>
+        <h1 style="font-size:2rem;font-weight:700;line-height:1.2;margin:0 0 1rem;color:var(--text);">
+          Ethan [Nelson] Lyon
+        </h1>
+        <p style="color:var(--muted);max-width:520px;margin:0 0 0.5rem;">
+          Senior Data Scientist. Building end-to-end machine learning systems for fraud detection and risk mitigation. Based in Houston, TX.
+        </p>
+        <p style="color:var(--muted);max-width:520px;margin:0;font-size:12px;">
+          M.E.E. Rice University · EMBC
+        </p>
+      </div>
+      <div style="position:relative;flex-shrink:0;">
+        <img
+          src="/enl_nara.jpg"
+          alt="Ethan Lyon in Nara"
+          style="width:160px;height:200px;object-fit:cover;object-position:22% top;display:block;border:1px solid var(--border);"
+        />
+        <p style="margin:0.4rem 0 0;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-align:center;">Nara</p>
+      </div>
     </div>
 
     <hr class="divider" />
