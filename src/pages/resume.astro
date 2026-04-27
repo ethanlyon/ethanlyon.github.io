@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const experience = [
+  {
+    role: 'Senior Data Scientist',
+    company: 'NRG Energy',
+    location: 'Houston, TX',
+    period: 'Nov 2025 — present',
+    bullets: [
+      'Ownership of fraud and bad debt detection + mitigation products.',
+      'Serving as fraud subject matter expert across the organization.',
+    ],
+  },
+  {
+    role: 'Data Scientist',
+    company: 'NRG Energy',
+    location: 'Houston, TX',
+    period: 'Apr 2022 — Nov 2025',
+    bullets: [
+      'Developed multiple end-to-end ML models for fraud prediction and mitigation, including novel realtime fraud detection via API — saving over $10MM annually.',
+      'Honored with the Innovation "Game Changer" Award out of 300 total nominees.',
+      'Conducted analyses and advised business on fraud mitigation strategies in an adversarial environment.',
+      'Leveraged payment and credit data to advise new fraud and customer acquisition strategies.',
+      'Utilized causal analysis to determine effectiveness of credit policy and deposit strategy.',
+      'Used PySpark, Databricks, and Azure DevOps to build models and conduct analyses.',
+    ],
+  },
+  {
+    role: 'Data Science Intern',
+    company: 'Chevron',
+    location: 'Houston, TX',
+    period: 'Jun — Aug 2019',
+    bullets: [
+      'Wrote scripts for automatic data science model deployment to Microsoft Azure cloud.',
+      'Improved performance of on-site server cluster by deep analysis of local queries.',
+    ],
+  },
+  {
+    role: 'Software Engineer & Data Science Intern',
+    company: 'Rakuten Inc.',
+    location: 'Tokyo, Japan',
+    period: 'Jun — Dec 2018',
+    bullets: [
+      'Worked on data science projects related to fraud detection, prophet forecasting, and budget automation.',
+      'Created a UI to display relevant KPIs in a new ecosystem.',
+    ],
+  },
+  {
+    role: 'Summer Research Intern — VR Tactile Feedback Device',
+    company: 'Tokyo Institute of Technology',
+    location: 'Tokyo, Japan',
+    period: 'Summer 2017',
+    bullets: [
+      'Created a device to provide more realistic tactile feedback in VR using Arduino.',
+    ],
+  },
+];
+
+const education = [
+  {
+    degree: 'M.E.E. — Master\'s in Data Science (Electrical Engineering)',
+    school: 'Rice University',
+    period: 'May 2021',
+    detail: 'GPA: 3.93 / 4.0',
+  },
+  {
+    degree: 'B.S. — Electrical Engineering',
+    school: 'Rice University',
+    period: 'Dec 2018',
+    detail: '',
+  },
+];
+
+const skills = [
+  { name: 'Python', level: 'Advanced' },
+  { name: 'SQL', level: 'Advanced' },
+  { name: 'PySpark', level: 'Advanced' },
+  { name: 'Machine Learning', level: 'Proficient' },
+  { name: 'Fraud Mitigation', level: 'Proficient' },
+  { name: 'Azure DevOps', level: 'Proficient' },
+  { name: 'LaTeX', level: 'Intermediate' },
+  { name: 'R', level: 'Intermediate' },
+  { name: 'Japanese', level: 'Intermediate (N3)' },
+];
+
+const honors = [
+  { year: 'Winter 2026', title: 'Innovation "Game Changer" Award — NRG Energy', detail: 'Selected out of 300 nominees for NRG\'s first realtime risk mitigation ML model.' },
+  { year: 'Winter 2017', title: 'Japanese Language Proficiency Test — N3 Certificate', detail: '' },
+  { year: 'Summer 2016', title: 'Center for Language and Intercultural Communication', detail: 'Studied Japanese at Sophia University, Tokyo, Japan.' },
+  { year: 'Fall 2013', title: 'Eagle Scout', detail: '' },
+];
+---
+
+<Layout title="Resume — Ethan N. Lyon">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem;">
+    <p class="label">003 / resume</p>
+    <a
+      href="/resume.pdf"
+      style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:6px 14px;transition:all 0.2s;"
+      onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'"
+      onmouseout="this.style.background='transparent';this.style.color='var(--accent)'"
+    >
+      Download PDF ↓
+    </a>
+  </div>
+
+  <!-- Experience -->
+  <section style="margin-bottom:3rem;">
+    <p class="label" style="margin-bottom:1rem;">experience</p>
+    <hr class="divider" style="margin-top:0;" />
+    {experience.map(job => (
+      <div style="margin-bottom:2rem;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.15rem;">
+          <strong>{job.role} — {job.company}</strong>
+          <span style="color:var(--muted);font-size:12px;white-space:nowrap;margin-left:1rem;">{job.period}</span>
+        </div>
+        <p style="margin:0 0 0.5rem;color:var(--muted);font-size:12px;">{job.location}</p>
+        <ul style="margin:0;padding-left:1.5rem;color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:0.25rem;">
+          {job.bullets.map(b => <li>{b}</li>)}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <!-- Education -->
+  <section style="margin-bottom:3rem;">
+    <p class="label" style="margin-bottom:1rem;">education</p>
+    <hr class="divider" style="margin-top:0;" />
+    {education.map(edu => (
+      <div style="display:flex;justify-content:space-between;margin-bottom:1.25rem;">
+        <div>
+          <strong>{edu.degree}</strong>
+          <p style="margin:0.2rem 0 0;color:var(--muted);font-size:13px;">{edu.school}{edu.detail ? ` · ${edu.detail}` : ''}</p>
+        </div>
+        <span style="color:var(--muted);font-size:12px;white-space:nowrap;margin-left:1rem;">{edu.period}</span>
+      </div>
+    ))}
+  </section>
+
+  <!-- Skills -->
+  <section style="margin-bottom:3rem;">
+    <p class="label" style="margin-bottom:1rem;">skills</p>
+    <hr class="divider" style="margin-top:0;" />
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 2rem;">
+      {skills.map(skill => (
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding:0.4rem 0;">
+          <span style="font-size:13px;">{skill.name}</span>
+          <span style="font-size:11px;color:var(--muted);letter-spacing:0.05em;">{skill.level}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Honors -->
+  <section>
+    <p class="label" style="margin-bottom:1rem;">honors & activities</p>
+    <hr class="divider" style="margin-top:0;" />
+    {honors.map(h => (
+      <div style="display:flex;gap:1.5rem;margin-bottom:1rem;">
+        <span style="font-size:11px;color:var(--accent);white-space:nowrap;">{h.year}</span>
+        <div>
+          <p style="margin:0;font-size:13px;">{h.title}</p>
+          {h.detail && <p style="margin:0.2rem 0 0;font-size:12px;color:var(--muted);">{h.detail}</p>}
+        </div>
+      </div>
+    ))}
+  </section>
+</Layout>

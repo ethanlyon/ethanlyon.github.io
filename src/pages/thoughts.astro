@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  {
+    date: '2026-04-25',
+    title: 'New Domains Acquired',
+    body: 'The domains kabenai.com and complexheaven.com are now mine. Kabenai - or maybe Kaben AI? - lit. means no walls in Japanese. The exoteric meaning is an enterprise without walls or limits. The esoteric meaning is a reference to how there are no walls upon which we can lift ourselves up anymore. For Complex Heaven, it felt right in an inexplicable way. Maybe the name of a game or anonymous forum.',
+  },
+  {
+    date: '2026-04-24',
+    title: 'Fraud Set to Explode?',
+    body: 'AI will enable everyone quick access to the crystallized knowledge of a hardened pen tester at scale. Since most fraud opportunities come from broken code - will I alone have job security? It\'ll be fine =)',
+  },
+  {
+    date: '2026-04-22',
+    title: 'Job Market in A Slump',
+    body: 'Hiring slumps come and go in waves. Except this time we have washed up on a beach with the ocean drained?',
+  },
+];
+---
+
+<Layout title="Thoughts — Ethan N. Lyon">
+  <p class="label" style="margin-bottom:2rem;">004 / thoughts</p>
+
+  <div>
+    {posts.map(post => (
+      <div style="border-top:1px solid var(--border);padding:1.5rem 0;">
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem;">
+          <span style="font-size:11px;color:var(--accent);letter-spacing:0.1em;">{post.date}</span>
+          <h2 style="margin:0;font-size:1rem;font-weight:700;">{post.title}</h2>
+        </div>
+        <p style="margin:0;color:var(--muted);font-size:13px;max-width:600px;">{post.body}</p>
+      </div>
+    ))}
+    <div style="border-top:1px solid var(--border);"></div>
+  </div>
+</Layout>

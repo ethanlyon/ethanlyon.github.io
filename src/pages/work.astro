@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'Realtime Fraud Detection API',
+    description: 'End-to-end ML model for realtime fraud detection and prevention at NRG Energy — a first of its kind for the company. Saved over $10MM annually. Recognized with the NRG Innovation "Game Changer" Award out of 300 nominees.',
+    tags: ['Python', 'Machine Learning', 'PySpark', 'Azure DevOps'],
+    url: null,
+    year: '2022–2025',
+  },
+  {
+    title: 'Bayesian Hierarchical Vector Autoregression for Health Prediction',
+    description: 'Novel time-series Bayesian model for predicting health outcomes in students using mobile sensor data. Published at NeurIPS 2020 and presented at EMBC 2021.',
+    tags: ['Python', 'R', 'Bayesian Modeling', 'Time Series'],
+    url: 'https://ieeexplore.ieee.org/document/9630732',
+    year: '2020–2021',
+  },
+  {
+    title: 'Auto Flight Stabilization for Rockets',
+    description: 'Collaborated with mechanical engineers to program a control system on a Linux embedded device to actively stabilize the flight path of a rocket.',
+    tags: ['Embedded Systems', 'Linux', 'Control Systems'],
+    url: null,
+    year: '2017–2018',
+  },
+  {
+    title: 'Rakuten Inc. — Software Engineer & Data Science Intern',
+    description: 'Worked on data science projects at Rakuten Inc. (Tokyo) spanning fraud detection, prophet forecasting, and budget automation.',
+    tags: ['Python', 'Data Science', 'Fraud Detection', 'Tokyo'],
+    url: null,
+    year: '2018',
+  },
+  {
+    title: 'VR Tactile Feedback Device',
+    description: 'Research at Tokyo Institute of Technology. Created a device to provide more realistic tactile feedback in virtual reality using Arduino.',
+    tags: ['Arduino', 'Hardware', 'VR'],
+    url: null,
+    year: '2017',
+  },
+];
+
+const publications = [
+  {
+    year: '2021',
+    title: '"Health Label and Behavioral Feature Prediction Using Bayesian Hierarchical Vector Autoregression Models"',
+    venue: 'EMBC, published and presented November 2021',
+    url: 'https://ieeexplore.ieee.org/document/9630732',
+    pdf: '/EMBC_BHVAR_FINAL.pdf',
+  },
+  {
+    year: '2020',
+    title: '"Bayesian Hierarchical Vector Autoregression Models for Health Label and Mobile Sensor-based Behavioral Feature Prediction"',
+    venue: 'NeurIPS / Machine Learning for Mobile Health',
+    url: null,
+  },
+];
+---
+
+<Layout title="Work — Ethan N. Lyon">
+  <p class="label" style="margin-bottom:2rem;">002 / work</p>
+
+  <!-- Projects -->
+  <div style="margin-bottom:3rem;">
+    <div style="display:flex;flex-direction:column;gap:0;">
+      {projects.map((project, i) => (
+        <div style="border-top:1px solid var(--border);padding:1.5rem 0;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;">
+          <div>
+            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+              <span style="color:var(--muted);font-size:11px;">{String(i + 1).padStart(2, '0')}</span>
+              {project.url ? (
+                <a href={project.url} target="_blank" rel="noopener noreferrer" style="font-size:1rem;font-weight:700;color:var(--text);text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'">{project.title} ↗</a>
+              ) : (
+                <h2 style="margin:0;font-size:1rem;font-weight:700;color:var(--text);">{project.title}</h2>
+              )}
+            </div>
+            <p style="margin:0 0 0.75rem;color:var(--muted);font-size:13px;">{project.description}</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              {project.tags.map(tag => (
+                <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--border);padding:2px 8px;color:var(--muted);">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <span style="font-size:11px;color:var(--muted);white-space:nowrap;">{project.year}</span>
+        </div>
+      ))}
+      <div style="border-top:1px solid var(--border);"></div>
+    </div>
+  </div>
+
+  <!-- Publications -->
+  <p class="label" style="margin-bottom:1rem;">publications</p>
+  <hr class="divider" style="margin-top:0;" />
+  <div style="display:flex;flex-direction:column;gap:1.25rem;">
+    {publications.map(pub => (
+      <div>
+        <span style="font-size:11px;color:var(--accent);margin-right:0.75rem;">{pub.year}</span>
+        {pub.url ? (
+          <a href={pub.url} target="_blank" rel="noopener noreferrer" style="color:var(--text);font-size:13px;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'">{pub.title} ↗</a>
+        ) : (
+          <span style="color:var(--text);font-size:13px;">{pub.title}</span>
+        )}
+        <p style="margin:0.25rem 0 0 0;color:var(--muted);font-size:12px;">{pub.venue}</p>
+        {pub.pdf && (
+          <div style="display:flex;gap:1rem;margin-top:0.5rem;">
+            <a href={pub.pdf} target="_blank" rel="noopener noreferrer" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">View PDF ↗</a>
+            <a href={pub.pdf} download style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Download ↓</a>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</Layout>

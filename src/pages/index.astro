@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ethan [Nelson] Lyon" description="Senior Data Scientist — Houston, TX">
+  <div style="padding-top:2rem;">
+    <p class="label" style="margin-bottom:1rem;">001 / introduction</p>
+
+    <div class="bracket-box" style="margin-bottom:3rem;">
+      <h1 style="font-size:2rem;font-weight:700;line-height:1.2;margin:0 0 1rem;color:var(--text);">
+        Ethan [Nelson] Lyon
+      </h1>
+      <p style="color:var(--muted);max-width:520px;margin:0 0 0.5rem;">
+        Senior Data Scientist. Building end-to-end machine learning systems for fraud detection and risk mitigation. Based in Houston, TX.
+      </p>
+      <p style="color:var(--muted);max-width:520px;margin:0;font-size:12px;">
+        M.E.E. Rice University · EMBC
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
+      <a href="/work" style="display:block;">
+        <div class="bracket-box" style="border:1px solid var(--border);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <p class="label" style="margin:0 0 0.5rem;">work</p>
+          <p style="margin:0;color:var(--muted);font-size:13px;">Projects, research, and publications.</p>
+        </div>
+      </a>
+
+      <a href="/thoughts" style="display:block;">
+        <div class="bracket-box" style="border:1px solid var(--border);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <p class="label" style="margin:0 0 0.5rem;">thoughts</p>
+          <p style="margin:0;color:var(--muted);font-size:13px;">Notes, ideas, and observations.</p>
+        </div>
+      </a>
+
+      <a href="/resume" style="display:block;">
+        <div class="bracket-box" style="border:1px solid var(--border);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <p class="label" style="margin:0 0 0.5rem;">resume</p>
+          <p style="margin:0;color:var(--muted);font-size:13px;">Experience and background.</p>
+        </div>
+      </a>
+
+      <a href="/contact" style="display:block;">
+        <div class="bracket-box" style="border:1px solid var(--border);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <p class="label" style="margin:0 0 0.5rem;">contact</p>
+          <p style="margin:0;color:var(--muted);font-size:13px;">Get in touch.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</Layout>
