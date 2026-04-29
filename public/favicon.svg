@@ -5,6 +5,8 @@
   <polyline points="24,3 29,3 29,8" fill="none" stroke="#c8b560" stroke-width="1.5" stroke-linecap="square"/>
   <polyline points="3,24 3,29 8,29" fill="none" stroke="#c8b560" stroke-width="1.5" stroke-linecap="square"/>
   <polyline points="24,29 29,29 29,24" fill="none" stroke="#c8b560" stroke-width="1.5" stroke-linecap="square"/>
-  <!-- Initials -->
-  <text x="16" y="20" font-family="'Courier New', monospace" font-size="9" font-weight="700" fill="#c8b560" text-anchor="middle" letter-spacing="1">ENL</text>
+  <!-- Initials, manually centered -->
+  <text font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#c8b560" text-anchor="middle">
+    <tspan x="9" y="20">E</tspan><tspan x="16" y="20">N</tspan><tspan x="23" y="20">L</tspan>
+  </text>
 </svg>
